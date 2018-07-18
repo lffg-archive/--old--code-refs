@@ -17,6 +17,19 @@ function myFunction (arg1: string, arg2: number): string {
 }
 ```
 
+### Índice
+
+- [Booleano (`boolean`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#booleanos-boolean);
+- [Número (`number`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#n%C3%BAmeros-number);
+- [Array (`array`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#arrays-array);
+- [Tupla](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#tuplas);
+- [Nunca (`never`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#nunca-never);
+- [Qualquer (`any`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#qualquer-any);
+- [Void (`void`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#void-void);
+- [Nulo e Indefinido (`null` e `undefined`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#nulo-e-indefinido-null-e-undefined);
+- [Objeto (`object`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#objeto-object);
+- [Apêndice: Asserção de Tipos](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#ap%C3%AAndice-asser%C3%A7%C3%A3o-de-tipos).
+
 ## Booleano (`boolean`)
 
 O tipo `boolean` representa um valor verdadeiro/falso. Abaixo encontra-se um exemplo de seu uso:
