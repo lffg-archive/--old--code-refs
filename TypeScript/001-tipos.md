@@ -20,7 +20,7 @@ function myFunction (arg1: string, arg2: number): string {
 }
 ```
 
-## Booleanos `boolean`
+## Booleanos (`boolean`)
 
 O tipo `boolean` representa um valor verdadeiro/falso. Abaixo encontra-se um exemplo de seu uso:
 
@@ -28,7 +28,7 @@ O tipo `boolean` representa um valor verdadeiro/falso. Abaixo encontra-se um exe
 const isActive: boolean = false
 ```
 
-## Números `number`
+## Números (`number`)
 
 O tipo `number` representa um valor numérico, podendo ser inteiro ou decimal (float). Valores binários e hexadecimais também são suportados, conforme aponta a [documentação](https://www.typescriptlang.org/docs/handbook/basic-types.html#number). Abaixo encontra-se um exemplo de uso:
 
@@ -37,7 +37,7 @@ const intVal: number = 157
 const floatVal: number = 3.14
 ```
 
-## Arrays `array`
+## Arrays (`array`)
 
 O tipo `array` representa um array em JavaScript. Existem duas formas para se tipar um `array`, conforme exeplificado abaixo:
 
@@ -49,9 +49,75 @@ const mySecondArray: Array<number> = [1, 2, 3]
 **Nota**: Como é possível notar acima, diferentemente do JavaScript, os `array`s em TypeScript só aceitam os valores que foram apontados na sua tipagem, logo, o exemplo abaixo irá mostrar um erro:
 
 ```typescript
-const myWrongArray: number[] = [1, 2 '3'] // '3' é uma string em um array que só deve conter números
+const myWrongArray: number[] = [1, 2 '3'] // ERRO! '3' é uma string em um array que só deve conter números
 ```
 
 ## Tuplas
 
+> **Perâmbulo**: Este tipo não está presente no JavaScript.
 
+As tuplas são, em tese, `array`s com tamanho e tipos limitados. Veja o exemplo abaixo:
+
+```typescript
+const myTuple: [number, string, string] = [157, 'bala', ':p']
+```
+
+**Nota**: Como [apontado na documentação](https://www.typescriptlang.org/docs/handbook/basic-types.html#tuple), quando um elemento fora dos índices iniciais for acessado, um tipo _união (`union`)_ será retornado:
+
+> When accessing an element outside the set of known indices, a union type is used instead [...]
+
+## Nunca (`never`)
+
+> **Perâmbulo**: Este tipo não está presente no JavaScript.
+
+Geralmente o tipo `never` é atribuido à funções que jamais retornarão um valor ou alcançaram o seu final, por exemplo, em _loops_ infinitos ou quando exceções são lançadas. Veja o exemplo abaixo:
+
+```typescript
+function error (message: string = ''): never {
+  throw new Error(message)
+
+  // Essa função nunca chegará a esse ponto, logo, como não retornou
+  // nenhum valor anteriormente, pode ser atribuída ao tipo `never`.
+}
+```
+
+## Qualquer (`any`)
+
+O tipo `any` aceita qualquer outro tipo em seu valor, exceto `never`, conforme [apontado na documentação](https://www.typescriptlang.org/docs/handbook/basic-types.html#tuple).
+
+Exemplo do uso do tipo `any`:
+
+```typescript
+const myFirstVariable: any = 'Olá, mundo!'
+const mySecondVariable: any = 157
+```
+
+Geralmente usado para fornecer uma integração mais fácil com códigos JavaScript já existentes.
+
+## Void (`void`)
+
+O tipo `void`, geralmente atribuído à funções, é o oposto de `any`, isto é, oposto a qualquer outro tipo. Em outras palavras, o tipo `void` está associado à ausência de qualquer outro tipo, até mesmo `null` ou `undefined` — que são considerado tipos.
+
+Veja abaixo um exemplo de uma função que não retorna **nada**, recebendo, portando, o tipo `void`:
+
+```typescript
+function main (): void {
+  alert(1)
+
+  // Note que a função não retorna nenhum valor, logo, pode receber o tipo `void`.
+}
+```
+
+## Nulo e Indefinido (`null` e `undefined`)
+
+Os tipos `null` e `undefined` representam valores nulos e indefinidos, respectivamente.  
+Estes valores têm as mesmas características de `null` e `undefined` no JavaScript.
+
+Exemplo:
+
+```typescript
+const nullValue: null = null
+const undefinedValue: undefined = undefined
+```
+
+**Nota**: É importante frisar que `null` e `undefined` são **subtipos** de todos os outros tipos — como `string` ou `number`, por exemplo. Desse modo, você pode atribuir o tipo `null` em um número, por exemplo.
