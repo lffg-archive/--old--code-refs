@@ -3,12 +3,9 @@
 O TypeScript fornece alguns tipos primitivos para se trabalhar. Para tipar um valor, usa-se a seguinte sintaxe:
 
 ```typescript
-{variavel}:<tipo> = {valor}
-```
+variavel: tipo = {valor}
 
-Por exemplo:
-
-```typescript
+// Por exemplo:
 const myVariable: string = 'Content'
 ```
 
@@ -20,7 +17,7 @@ function myFunction (arg1: string, arg2: number): string {
 }
 ```
 
-## Booleanos (`boolean`)
+## Booleano (`boolean`)
 
 O tipo `boolean` representa um valor verdadeiro/falso. Abaixo encontra-se um exemplo de seu uso:
 
@@ -28,7 +25,7 @@ O tipo `boolean` representa um valor verdadeiro/falso. Abaixo encontra-se um exe
 const isActive: boolean = false
 ```
 
-## Números (`number`)
+## Número (`number`)
 
 O tipo `number` representa um valor numérico, podendo ser inteiro ou decimal (float). Valores binários e hexadecimais também são suportados, conforme aponta a [documentação](https://www.typescriptlang.org/docs/handbook/basic-types.html#number). Abaixo encontra-se um exemplo de uso:
 
@@ -37,7 +34,7 @@ const intVal: number = 157
 const floatVal: number = 3.14
 ```
 
-## Arrays (`array`)
+## Array (`array`)
 
 O tipo `array` representa um array em JavaScript. Existem duas formas para se tipar um `array`, conforme exeplificado abaixo:
 
@@ -52,9 +49,9 @@ const mySecondArray: Array<number> = [1, 2, 3]
 const myWrongArray: number[] = [1, 2 '3'] // ERRO! '3' é uma string em um array que só deve conter números
 ```
 
-## Tuplas
+## Tupla
 
-> **Perâmbulo**: Este tipo não está presente no JavaScript.
+**Perâmbulo**: Este tipo não está presente no JavaScript.
 
 As tuplas são, em tese, `array`s com tamanho e tipos limitados. Veja o exemplo abaixo:
 
@@ -68,7 +65,7 @@ const myTuple: [number, string, string] = [157, 'bala', ':p']
 
 ## Nunca (`never`)
 
-> **Perâmbulo**: Este tipo não está presente no JavaScript.
+**Perâmbulo**: Este tipo não está presente no JavaScript.
 
 Geralmente o tipo `never` é atribuido à funções que jamais retornarão um valor ou alcançaram o seu final, por exemplo, em _loops_ infinitos ou quando exceções são lançadas. Veja o exemplo abaixo:
 
@@ -121,3 +118,54 @@ const undefinedValue: undefined = undefined
 ```
 
 **Nota**: É importante frisar que `null` e `undefined` são **subtipos** de todos os outros tipos — como `string` ou `number`, por exemplo. Desse modo, você pode atribuir o tipo `null` em um número, por exemplo.
+
+## Objeto (`object`)
+
+O tipo `object` representa um objeto.  
+É importante frisar que não é possível ler propriedades do tipo `object`, já que o TypeScript não as reconhece.
+
+Por exemplo:
+
+```typescript
+const myObject: object = {
+  name: 'Luiz Felipe',
+  age: 15
+}
+
+alert(myObject.name) // ERRO! Property 'name' does not exist on type 'object'.
+```
+
+De modo geral, o tipo `object` não se faz muito usável, já que existe a possibilidade de criar tipos personalizados e interfaces, que são, basicamente, objetos pré-definidos. _Este conteúdo será visto mais à frente._
+
+## Apêndice: Asserção de Tipos
+
+Asserção de tipos é um importante recurso em que você tem mais conhecimento do que o compilador em relação ao tipo de um determinado elemento, por exemplo:
+
+```typescript
+const myString: any = prompt('What\'s your name?')
+const length: number = (myString as string).length
+alert(length.toString())
+```
+
+Note acima que a sintaxe utilizada para efetuar a asserção de tipos foi a seguinte:
+
+```typescript
+(variable as type)
+
+// Por exemplo:
+const myString = (myOtherVariable as string)
+```
+
+Mas também pode se utilizar a outra sintaxe:
+
+```typescript
+(<type>variable)
+
+// Por exemplo:
+const myString = (<string>myOtherVariable)
+```
+
+Observações Importantes:
+
+1. As asserções de tipo **não provém nenhuma conversão de tipos**. São usadas somente pelo compilador, não afetando o código JavaScript final.
+1. Quando usado em conjunto com o **JSX**, a segunda sintaxe (`(<type>variable)`) para asserção de tipos **não deve ser usada**. Nesse caso, prefira sempre usar a primeira sintaxe (`(variable as type)`).
