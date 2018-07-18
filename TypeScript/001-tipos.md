@@ -19,10 +19,10 @@ function myFunction (arg1: string, arg2: number): string {
 
 ### Índice
 
-- [Booleano (`boolean`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#booleanos-boolean);
-- [Número (`number`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#n%C3%BAmeros-number);
-- [Array (`array`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#arrays-array);
-- [Tupla](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#tuplas);
+- [Booleano (`boolean`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#booleano-boolean);
+- [Número (`number`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#n%C3%BAmero-number);
+- [Array (`array`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#array-array);
+- [Tupla](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#tupla);
 - [Nunca (`never`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#nunca-never);
 - [Qualquer (`any`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#qualquer-any);
 - [Void (`void`)](https://github.com/lffg/code-refs/blob/master/TypeScript/001-tipos.md#void-void);
