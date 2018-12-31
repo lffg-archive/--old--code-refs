@@ -28,7 +28,7 @@ Um exemplo de query:
 
 ### Argumentos
 
-Ao realizar uma query, também há a possibilidad de passar um argumento, se definido pelo esquema. Exemplo:
+Ao realizar uma query, também há a possibilidade de passar um argumento, se definido pelo esquema. Exemplo:
 
 ```graphql
 {
