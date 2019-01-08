@@ -30,6 +30,10 @@ Exemplo:
 docker container run --name <container-name> <image-name>
 ```
 
+### `--detach` (`-d`)
+
+Roda o _container_ em modo _background_, emitindo somente o ID do _container_ em atividade.
+
 ### `--publish` (`-p`)
 
 Mapeia uma porta interna do _container_ para uma porta externa (que será **exposta** pelo _container_). Essa opção é do tipo **lista**, o que significa que múltiplos mapeamentos de portas podem ser feitos.
