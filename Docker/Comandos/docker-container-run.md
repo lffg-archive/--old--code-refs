@@ -43,3 +43,17 @@ No comando acima, a sintaxe "`8080:80`" define o mapeamento de portas, de modo q
 
 - O número que **precede** os dois pontos (`8080`) é a porta que será **exposta** pelo _container_;
 - O número que **procede** os dois pontos (`80`) é a porta interna do _container_.
+
+### `--volume` (`-v`)
+
+Cria um mapeamento de diretórios, de modo que irá mapear um diretório externo (do computador _host_) para um diretório **interno** ao _container_.
+
+Exemplo:
+```shell
+docker container run -v /path/to/host/dir:/path/to/internal/container/dir <image-name>
+```
+
+No comando acima, a sintaxe "`/path/to/host/dir:/path/to/internal/container/dir`" define o mapeamento de diretórios, de modo que:
+
+- O caminho que **precede** os dois pontos (`/path/to/host/dir`) é o diretório **externo** ao _container_;
+- O caminho que **procede** os dois pontos (`/path/to/internal/container/dir`) é o diretório **interno** do _container_.
