@@ -29,3 +29,17 @@ Exemplo:
 ```shell
 docker container run --name <container-name> <image-name>
 ```
+
+### `--publish` (`-p`)
+
+Mapeia uma porta interna do _container_ para uma porta externa (que será **exposta** pelo _container_). Essa opção é do tipo **lista**, o que significa que múltiplos mapeamentos de portas podem ser feitos.
+
+Exemplo:
+```shell
+docker container run -p 8080:80 <image-name>
+```
+
+No comando acima, a sintaxe "`8080:80`" define o mapeamento de portas, de modo que:
+
+- O número que **precede** os dois pontos (`8080`) é a porta que será **exposta** pelo _container_;
+- O número que **procede** os dois pontos (`80`) é a porta interna do _container_.
