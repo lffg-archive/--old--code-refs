@@ -1,4 +1,4 @@
-# `docker-container-ls`
+# `docker container ls`
 
 Lista todos os _containers_.  
 Também pode ser executado com os _aliases_ `ls`, `ps`, `list`.
