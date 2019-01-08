@@ -12,3 +12,11 @@ Mostra todos os _containers_, inclusive aqueles que já foram rodados, já que, 
 ### `--size` (`-s`)
 
 Mostra o tamanho dos arquivos.
+
+### `--quiet`(`-q`)
+
+Retorna somente o ID dos _containers_, separados por uma quebra de linha. Muito útil para remover todos os _containers_, através da junção dos comandos `docker container rm` e `docker container ls`:
+
+```shell
+docker container rm $(docker container ls -aq)
+```
