@@ -19,9 +19,7 @@ Aloca um pseudo terminal para ser utilizado.
 
 #### `--interactive` (`-i`)
 
-Abre no modo interativo. De acordo com a ajuda:
-
-> _Keep STDIN open even if not attached._
+Anexa o _stdin_ do _container_ ao terminal. "Modo interativo".
 
 #### `--name`
 
